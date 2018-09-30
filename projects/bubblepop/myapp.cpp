@@ -71,18 +71,7 @@ bool MyApp::Init()
 	}
 
 	{
-		DWORD ressize;
-		char *resptr;
-#define LOAD_RES(__resid)\
-		resptr = ResourceMgr::get().WorkOnResource(__resid, ressize);\
-		if (NULL == resptr)\
-		{\
-			Logwrite("loading resource failed");\
-			return false;\
-		}
-
-		LOAD_RES(501);
-		initText2D(resptr, ressize,m_winsizex,m_winsizey);
+		initText2D(m_winsizex,m_winsizey);
 	}
 	//loading shaders
 #if 0

@@ -4,7 +4,6 @@ getdirname()
 # files list 
 file(GLOB fileslist "*.cpp" "*.h")
 set(G_RESOURCES_EXTRA "
-501 RCDATA STRINGIZE(${CMAKE_CURRENT_SOURCE_DIR}/Holstein.DDS)
 502 RCDATA STRINGIZE(${CMAKE_CURRENT_SOURCE_DIR}/TextVertexShader.vertexshader)
 503 RCDATA STRINGIZE(${CMAKE_CURRENT_SOURCE_DIR}/TextVertexShader.fragmentshader)
 ")
