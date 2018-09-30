@@ -2,6 +2,7 @@
 bubble pop game example
 
 How to build:
+
 Just use cmake to create project files for visual studio or mingw makefiles.
 Then build from corressponding toolchain (visual studio or mingw32-make tool)  
 All dependencies to build already included in deps folder of bubblepop.
