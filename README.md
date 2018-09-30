@@ -10,8 +10,11 @@ All the events of bubble explodes are recorded in log file at location %appdata%
 
 How to play:
 
-Controls:Use mouse to aim cannon and click to shoot bubbles.
+Controls:
+Use mouse to aim cannon and click to shoot bubbles.
+
 Rules:
+
 	Match three or more bubbles of same color to remove them and gain score.
 	After each 6 bubbles fired, bubbles on board will shift down, also causes score gain.
 	On touching any bubble of board , game will over , final score displayed on right panel.
