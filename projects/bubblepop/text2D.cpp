@@ -221,7 +221,7 @@ void printText2D(const char * text1, int x, int y, float size,bool bgameover)
 #include <Shlwapi.h>
 #pragma comment(lib,"freetype.lib")
 
-void initText2D(const char * dataptr, int datasize,int winsizex,int winsizey)
+void initText2D(int winsizex,int winsizey)
 {
     g_winsizey= winsizey;
 	glGenVertexArrays(1, &VAO);
