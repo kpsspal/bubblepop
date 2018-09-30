@@ -38,7 +38,9 @@ void Bubble::Update(int timeElapsed)
 	{
 		if( false == MyApp::get().GetBoard().GetCellsCoord(newposx,newposy,newcellx,newcelly) )
 		{
-			bcollision =true;
+			m_posx = newposx;
+			m_posy = newposy;
+			return ;
 		}
 		else
 		{

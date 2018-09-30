@@ -15,7 +15,7 @@ class MyApp
 	ScorePanel m_scorepanel;
 	Bubble m_bubble;
 	Board m_board;
-	Cannon m_cannon;
+	
 	int m_prevtick;
 	bool m_gameover;
 	//GLuint vertexbuffer;
@@ -24,6 +24,7 @@ class MyApp
 	MyApp(){}
 	Bubble *GetAvailableBubble();
 public:
+	Cannon m_cannon;
 	int m_score;
 	int m_winsizex,m_winsizey;
 

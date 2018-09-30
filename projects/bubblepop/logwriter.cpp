@@ -107,7 +107,7 @@ void LogWriter::Logwrite(const char *funcname,int lineno,const char *fmt,...)
 	{
 		SYSTEMTIME st;
 		GetLocalTime(&st);
-		sprintf(timestr,"%02d:%02d.%02d'%03d,%d",st.wHour,st.wMinute,st.wSecond,st.wMilliseconds,GetTickCount());
+		sprintf(timestr,"%02d-%02d-%04d-%02d:%02d.%02d",st.wDay,st.wMonth,st.wYear,st.wHour,st.wMinute,st.wSecond);
 	}
 
 	va_list args;

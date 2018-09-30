@@ -19,6 +19,12 @@ bool Board::Init()
 	g_maxcells_x = ((MyApp::get().m_settings.m_boardsizex/BUBBLERADIUS)-1)/2;
 	//g_maxcells_y*2*BUBBLERADIUS = MyApp::get().m_settings.m_boardsizey
 	g_maxcells_y = MyApp::get().m_settings.m_boardsizey/(2*BUBBLERADIUS);
+
+
+	MyApp::get().m_settings.m_boardsizex = BUBBLERADIUS*(1+g_maxcells_x*2);
+	MyApp::get().m_settings.m_boardsizey = (2*BUBBLERADIUS)*g_maxcells_y ;
+
+
 	g_cells = new BYTE[g_maxcells_x*g_maxcells_y];
 	memset(g_cells,0,g_maxcells_x*g_maxcells_y);
 
@@ -46,6 +52,8 @@ bool Board::Init()
 
 void Board::Render()
 {
+	glLoadIdentity();
+
 	GlHelper::get().SetColor(2);
 	glBegin(GL_LINES);
 	glVertex3f(MyApp::get().m_settings.m_boardsizex, 0, 0.0f);
@@ -353,6 +361,19 @@ void Board::RemoveCells(std::vector<DWORD> &resultcells,BYTE color)
 		cellsremoved += "(" + INTTOSTRING(x)+ "," + INTTOSTRING(y) + ")";
 	}
 	Logwrite("Bubble Drop Event At %s",cellsremoved.c_str());
+
+	static const char *colornames[(MAX_BUBBLECOLORS+1)*3]	=
+	{
+		"BLACK",//0.0f, 0.0f, 0.0f,
+		"RED",//1.0f, 0.0f, 0.0f,
+		"GREEN",//0.0f, 1.0f, 0.0f,
+		"BLUE",//0.0f, 0.0f, 1.0f,
+		"CYAN",//0.0f, 1.0f, 1.0f,
+		"PINK",//1.0f, 0.0f, 1.0f,
+		"YELLOW",//1.0f, 1.0f, 0.0f,
+	};
+	
+	Logwrite("Bubbles Dropped Color=%s, Arow angle=%.2f",colornames[color],(MyApp::get().m_cannon.m_angle*180)/M_PI);
 
 	m_removedbubblesanim.m_color=color;
 	m_removedbubblesanim.m_removedcells= std::move(resultcells);
